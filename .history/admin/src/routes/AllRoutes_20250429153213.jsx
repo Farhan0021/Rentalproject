@@ -1,0 +1,26 @@
+import React from 'react'
+import {Routes, Route} from 'react-router-dom'
+import Dashboard from '../pages/Dashboard'
+import OwnerList from '../pages/owner/List'
+import OwnerAdd from '../pages/owner/Add'
+import SeekerAdd from '../pages/seeker/Add'
+import SeekerList from '../pages/seeker/List'
+
+const AllRoutes = () => {
+    return(
+        <>
+        <Routes>
+        <Route path='' element={<Dashboard/>} />
+        <Route path='/owner/List' element={<OwnerList/>} />
+        <Route path='/owner/Add' element={<OwnerAdd/>} />
+
+        <Route path='/seeker/list' element={<SeekerList/>} />
+        <Route path='/seeker/add' element={<SeekerAdd/>} />
+
+
+        </Routes>
+        </>
+    )
+}
+
+export default AllRoutes;
