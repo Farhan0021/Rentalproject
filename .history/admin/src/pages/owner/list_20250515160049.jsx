@@ -1,5 +1,4 @@
 import React, {useEffect, useState}from 'react'
-import {NavLink} from 'react-router-dom'
 import axios from 'axios'
 
 const list = () => {
@@ -20,8 +19,6 @@ const list = () => {
   return (
     <div className="container">
     <div className="page-inner">
-      <div className="row">
-        <div className="col-md-12">
     <h3> Owner  List</h3>
       <table className='table table-dark'>
         <thead>
@@ -43,15 +40,12 @@ const list = () => {
                   <td>{item.name}</td>
                   <td>{item.email}</td>
                   <td>{item.contact}</td>
-                  <td><NavLink to={`/view-property/${item._id}`} className='btn btn-sm btn-info '>View Property</NavLink></td>
                 </tr>
               )
             })
           }
         </tbody>
       </table>
-      </div>
-      </div>
       </div>
       </div>
   )

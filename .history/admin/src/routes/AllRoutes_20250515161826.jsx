@@ -20,7 +20,7 @@ const AllRoutes = () => {
 
 
         <Route path='/dashboard' element={<Dashboard/>}/>
-        <Route path='/view-property/:id' element={<ViewProperty/>}/>
+        <Route path='/view-property' element={<ViewProperty/>}/>
         <Route path='/owners/list' element={<OwnerList/>} />
         <Route path='/owners/add' element={<OwnerAdd/>} />
 

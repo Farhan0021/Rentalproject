@@ -18,7 +18,8 @@ const Details = () => {
         })
     },[])
     return (
-        <div className="container mt-0 mb-5" style={{ psddingTop: '70px'}}>
+        <div className="container mt-0 mb-5">
+
             <div className="row">
                 <div className="col-md-8 ">
                     <div className="card m-2 p-3">
@@ -56,9 +57,13 @@ const Details = () => {
                                                 ?
                                                 <span>&nbsp;&nbsp;<i class="fa fa-bolt" aria-hidden="true"></i> {item}</span>
                                                 :
-                                                item=="Furnished"
+                                                item=="Full Furnished"
                                                 ?
                                                 <span>&nbsp;&nbsp;<i class="fa fa-bed" aria-hidden="true"></i> {item}</span>
+                                                :
+                                                item=="Semi Furnished"
+                                                ?
+                                                <span>&nbsp;&nbsp;<i class="fa fa-adjust" aria-hidden="true"></i> {item}</span>
                                                 :
                                                 item=="Water"
                                                 ?

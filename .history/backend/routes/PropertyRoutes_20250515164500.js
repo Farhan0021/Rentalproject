@@ -12,6 +12,6 @@ routes.get("/withowner", getAllPropertyWithOwner)
 
 routes.get("/find/:id", getAllPropertyById);
 
-routes.get("/admin/:id", getAllPropertyByOwnerAdmin);
+routes.get("/admin/:id", getAllPropertyByOwnerAdmin)
 
 export default routes;

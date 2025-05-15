@@ -43,7 +43,7 @@ const list = () => {
                   <td>{item.name}</td>
                   <td>{item.email}</td>
                   <td>{item.contact}</td>
-                  <td><NavLink to={`/view-property/${item._id}`} className='btn btn-sm btn-info '>View Property</NavLink></td>
+                  <td><NavLink to="/view-property" className='btn btn-sm btn-info '>View Property</NavLink></td>
                 </tr>
               )
             })

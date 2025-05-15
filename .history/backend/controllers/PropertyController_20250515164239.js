@@ -65,4 +65,4 @@ let getAllPropertyById = async(req, res)=>{
     res.send(result);
 }
 
-export { SaveProperty,getAllPropertyWithOwner, getAllproperty,getAllPropertyById,getAllPropertyByOwnerAdmin, getAllPropertyByOwner,}
+export { SaveProperty,getAllPropertyWithOwner, getAllproperty,getAllPropertyById, getAllPropertyByOwner,}

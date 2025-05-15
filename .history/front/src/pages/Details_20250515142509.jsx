@@ -56,7 +56,7 @@ const Details = () => {
                                                 ?
                                                 <span>&nbsp;&nbsp;<i class="fa fa-bolt" aria-hidden="true"></i> {item}</span>
                                                 :
-                                                item=="Furnished"
+                                                item=="Full Furnished"
                                                 ?
                                                 <span>&nbsp;&nbsp;<i class="fa fa-bed" aria-hidden="true"></i> {item}</span>
                                                 :

@@ -4,11 +4,6 @@ import axios from 'axios'
 
 const Details = () => {
     let param = useParams();
-
-    useEffect(()=>{
-        window.scrollTo(0, 0);
-    },[])
-
     let [property, setProperty] = useState({});
     let id = param.id;
     useEffect(()=>{
@@ -18,20 +13,25 @@ const Details = () => {
         })
     },[])
     return (
-        <div className="container mt-0 mb-5" style={{ psddingTop: '70px'}}>
+        <div className="container my-5">
             <div className="row">
                 <div className="col-md-8 ">
                     <div className="card m-2 p-3">
                        <h3> {property.tittle} </h3>
-                       <h5>&#8377; {property.rent ? property.rent.toFixed(2) : ''} </h5>
+                       <h5>&#8377; {property.rent.toFixed(2)} </h5>
                        <p> <i class="fa fa-map-marker" aria-hidden="true"></i>
                        {property.address} </p>
-                       
-                       <div className="row">
-
                        <div className="col-md-5">
                         <img src='/public/assets/images/img_7.jpg' className='img-thumbnail'/>
                        </div>
+
+
+
+                       {/* <div className="col-md-7">
+                        <div className="p-2">
+                            
+                        </div>
+                       </div> */}
 
                         <div className='col-md-7'>
                         <div className='px-2 py-3 bg-dark'>
@@ -56,9 +56,13 @@ const Details = () => {
                                                 ?
                                                 <span>&nbsp;&nbsp;<i class="fa fa-bolt" aria-hidden="true"></i> {item}</span>
                                                 :
-                                                item=="Furnished"
+                                                item=="Full Furnished"
                                                 ?
                                                 <span>&nbsp;&nbsp;<i class="fa fa-bed" aria-hidden="true"></i> {item}</span>
+                                                :
+                                                item=="Semi Furnished"
+                                                ?
+                                                <span>&nbsp;&nbsp;<i class="fa fa-adjust" aria-hidden="true"></i> {item}</span>
                                                 :
                                                 item=="Water"
                                                 ?
@@ -83,8 +87,7 @@ const Details = () => {
                             </div>
                             
 
-                         </div>   
-                        </div>
+                            
                         </div>
 
                     </div>
@@ -92,8 +95,7 @@ const Details = () => {
                 <div className="col-md-4">
                     <div className="card m-2 p-3">
                         <h3>Contact Owner</h3>
-                        <p><b>Ow-Name</b> {property.owner_id ? property.owner_id.name : ''} </p>
-                        <p><b>Ow-Contact</b>  +91 {property.owner_id ? property.owner_id.contact : ''} </p>
+                        <p><b>Ow-Name</b>+91 917916835 </p>
                     </div>
                 </div>
             </div>
