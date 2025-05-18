@@ -38,7 +38,6 @@ const MyProperty =() => {
                 <th>Tittle</th>
                 <th>Rent</th>
                 <th>Type</th>
-                <th>Messages</th>
              </tr>
             </thead>
             <tbody>

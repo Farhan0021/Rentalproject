@@ -80,4 +80,4 @@ export const getAllMsgByPropertyId = async (req, res) => {
 };
 
 
-export { saveMessage};
+export { saveMessage, getAllMsgByPropertyId};

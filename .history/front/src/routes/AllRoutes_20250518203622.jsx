@@ -14,7 +14,6 @@ import Myprofile from '../pages/seekers/MyProfile'
 import SeekerProtactedRoutes from './SeekerProtactedRoutes'
 import OwnerProtactedRoutes from './OwnerProtactedRoutes'
 import MyAccount from '../pages/owner/MyAccount'
-import Messages from '../pages/owner/Messages'
 import AddNew from '../pages/owner/AddNew'
 import MyProperty from '../pages/owner/MyProperty'
 const AllRoutes = () => {

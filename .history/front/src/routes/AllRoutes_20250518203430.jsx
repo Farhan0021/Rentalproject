@@ -8,13 +8,13 @@ OwnerLogin,
 OwnerSignup,
 Details,
 SeekerLogout,
-OwnerLogout
+OwnerLogout,
+MessageDetails,
 } from '../pages'
 import Myprofile from '../pages/seekers/MyProfile'
 import SeekerProtactedRoutes from './SeekerProtactedRoutes'
 import OwnerProtactedRoutes from './OwnerProtactedRoutes'
 import MyAccount from '../pages/owner/MyAccount'
-import Messages from '../pages/owner/Messages'
 import AddNew from '../pages/owner/AddNew'
 import MyProperty from '../pages/owner/MyProperty'
 const AllRoutes = () => {
@@ -43,7 +43,7 @@ const AllRoutes = () => {
             
             <Route path='owner/my-account' element={<MyAccount/>}/>
             <Route path='owner/logout' element={<OwnerLogout/>}/>
-            <Route path='owner/messages/:id' element={<Messages />} />
+            <Route path="/owner/messages/:id" element={<MessageDetails />} />
 
             </Route>
             

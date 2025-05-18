@@ -55,29 +55,14 @@ let saveMessage = async (req, res) => {
 };
 
 
-// let getAllMsgByPropertyId = async (req, res) => {
-//     try {
-//         const result = await Msg.find({ property_id: req.params.pid });
-//         res.send(result);
-//     } catch (err) {
-//         console.error('Error fetching messages:', err);
-//         res.status(500).send({ success: false, error: 'Failed to fetch messages' });
-//     }
-// };
-
-
-export const getAllMsgByPropertyId = async (req, res) => {
-  try {
-    const propertyId = req.params.id;
-
-    const messages = await Msg.find({ propertyId })
-      .populate('seeker_id', 'name email contact') 
-    res.status(200).json(messages);
-  } catch (err) {
-    console.error('Error fetching messages:', err);
-    res.status(500).json({ error: 'Failed to fetch messages' });
-  }
+let getAllMsgByPropertyId = async (req, res) => {
+    try {
+        const result = await Msg.find({ property_id: req.params.pid });
+        res.send(result);
+    } catch (err) {
+        console.error('Error fetching messages:', err);
+        res.status(500).send({ success: false, error: 'Failed to fetch messages' });
+    }
 };
 
-
-export { saveMessage};
+export { saveMessage, getAllMsgByPropertyId };

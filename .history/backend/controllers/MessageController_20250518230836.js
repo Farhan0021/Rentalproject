@@ -71,7 +71,8 @@ export const getAllMsgByPropertyId = async (req, res) => {
     const propertyId = req.params.id;
 
     const messages = await Msg.find({ propertyId })
-      .populate('seeker_id', 'name email contact') 
+      .populate('seeker_id', 'name email contact') // 👈 this is key
+
     res.status(200).json(messages);
   } catch (err) {
     console.error('Error fetching messages:', err);
@@ -80,4 +81,4 @@ export const getAllMsgByPropertyId = async (req, res) => {
 };
 
 
-export { saveMessage};
+export { saveMessage, getAllMsgByPropertyId };

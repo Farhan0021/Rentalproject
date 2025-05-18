@@ -24,15 +24,12 @@
 
 
 import jwt from 'jsonwebtoken';
-import Msg from '../models/Message.js';
-import Seeker from '../models/Seeker.js'; // if used anywhere
-
-
 // import dotenv from 'dotenv';
 // dotenv.config();
 
+const Msg = require('../../models/messageModel'); // 
 
-
+// ✅ Save a new message
 let saveMessage = async (req, res) => {
     try {
         const token = req.body.seeker_token;
@@ -54,30 +51,15 @@ let saveMessage = async (req, res) => {
     }
 };
 
-
-// let getAllMsgByPropertyId = async (req, res) => {
-//     try {
-//         const result = await Msg.find({ property_id: req.params.pid });
-//         res.send(result);
-//     } catch (err) {
-//         console.error('Error fetching messages:', err);
-//         res.status(500).send({ success: false, error: 'Failed to fetch messages' });
-//     }
-// };
-
-
-export const getAllMsgByPropertyId = async (req, res) => {
-  try {
-    const propertyId = req.params.id;
-
-    const messages = await Msg.find({ propertyId })
-      .populate('seeker_id', 'name email contact') 
-    res.status(200).json(messages);
-  } catch (err) {
-    console.error('Error fetching messages:', err);
-    res.status(500).json({ error: 'Failed to fetch messages' });
-  }
+// ✅ Get all messages for a property ID
+let getAllMsgByPropertyId = async (req, res) => {
+    try {
+        const result = await Msg.find({ property_id: req.params.pid });
+        res.send(result);
+    } catch (err) {
+        console.error('Error fetching messages:', err);
+        res.status(500).send({ success: false, error: 'Failed to fetch messages' });
+    }
 };
 
-
-export { saveMessage};
+export { saveMessage, getAllMsgByPropertyId };
