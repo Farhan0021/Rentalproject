@@ -38,7 +38,7 @@ const Login  = () => {
             setErrMsg("This Password is Incorect !")
           }
           if(response.data.errType==3){
-            setErrMsg("It Seems That Your ID is Blocked!")
+            setErrMsg("It Seems That Your is Blocked !")
           }
         }
        })

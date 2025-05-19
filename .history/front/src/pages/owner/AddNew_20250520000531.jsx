@@ -15,8 +15,7 @@ const AddNew = () => {
       property_type :"",
       rent : "",
       deposite :"",
-      amenity : "",
-      image : ""
+      amenity : ""
     },
     onSubmit : (formData)=>{
       axios.post(`${import.meta.env.VITE_API_URL}/property`, formData, {
@@ -45,7 +44,7 @@ const AddNew = () => {
 
               <div className="my-4">
               <label>Image</label>
-              <input name='image' type='file' className={'form-control ' + (propFrm.errors.image && propFrm.touched.image ? 'is-invalid' : '') } />
+              <input name='image' type='file' className={'form-control'} />
               </div>
 
               <div className="my-4">

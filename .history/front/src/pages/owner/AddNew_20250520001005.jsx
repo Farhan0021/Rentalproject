@@ -45,7 +45,7 @@ const AddNew = () => {
 
               <div className="my-4">
               <label>Image</label>
-              <input name='image' type='file' className={'form-control ' + (propFrm.errors.image && propFrm.touched.image ? 'is-invalid' : '') } />
+              <input name='image' type='file' className={'form-control'} />
               </div>
 
               <div className="my-4">

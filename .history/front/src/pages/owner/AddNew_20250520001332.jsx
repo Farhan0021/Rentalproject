@@ -16,7 +16,7 @@ const AddNew = () => {
       rent : "",
       deposite :"",
       amenity : "",
-      image : ""
+      image : "",
     },
     onSubmit : (formData)=>{
       axios.post(`${import.meta.env.VITE_API_URL}/property`, formData, {

@@ -15,11 +15,7 @@ const list = () => {
   },[])
 
   let changeStatus = (obj)=>{
-    let s = obj.status==1 ? 0 : 1;
-    axios.put(`http://localhost:3000/api/v1/owner/${obj._id}`,{status : s})
-    .then(response=>{
-      console.log(response.data);
-    })
+    console.log(obj)
   }
   
   return (
@@ -50,7 +46,7 @@ const list = () => {
                   <td>{item.email}</td>
                   <td>{item.contact}</td>
                   <td><NavLink to={`/view-property/${item._id}`} className='btn btn-sm btn-info '>View Property</NavLink></td>
-                  <td><button onClick={()=>changeStatus(item)} className={'btn ' + (item.status==1 ? 'btn-success' : 'btn-danger')}>{item.status==1 ? 'Active' : 'Deactive'}</button> </td>
+                  <td><button onClick={()=>changeStatus(item)} className='btn btn-success'>{item.status==1 ? 'Active' : 'Deactive'}</button> </td>
                 </tr>
               )
             })
