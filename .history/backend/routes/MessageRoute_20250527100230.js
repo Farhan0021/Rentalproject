@@ -3,7 +3,7 @@ import { saveMessage, getAllMsgByPropertyId, rzpyOrder} from '../controllers/Mes
 let routes = express.Router();
 
 routes.post("/", saveMessage);
-routes.post("/order", rzpyOrder);
+routes.post("order", rzpyOrder);
 routes.get("/getmessages/:pid", getAllMsgByPropertyId)
 
 export default routes;
