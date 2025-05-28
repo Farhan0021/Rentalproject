@@ -19,7 +19,6 @@ import AddNew from '../pages/owner/AddNew'
 import MyProperty from '../pages/owner/MyProperty'
 import EditProfile from '../pages/seekers/EditProfile'
 import UpdatePass from '../pages/seekers/UpdatePass'
-import ForgotPassword from '../pages/seekers/ForgotPassword'
 const AllRoutes = () => {
     return(
         <>
@@ -27,7 +26,6 @@ const AllRoutes = () => {
             <Route path='' element= { <Home/>}/>
             <Route path='details/:id' element={<Details/>}/>
             <Route path='seeker/login' element={<SeekerLogin/>}/>
-            <Route path='seeker/forgot-password' element={<ForgotPassword/>}/>
             <Route path='' element={<SeekerProtactedRoutes/>}>
 
             <Route path='seeker/my-profile' element={<Myprofile/>}/>

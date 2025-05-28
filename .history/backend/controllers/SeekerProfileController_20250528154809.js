@@ -1,6 +1,5 @@
 import Seeker from '../models/Seeker.js'
 import jwt from 'jsonwebtoken'
-import sha1 from 'sha1';
 
 let SeekerProfile = async(req, res)=>{
     if(req.headers.authorization){
@@ -36,37 +35,7 @@ let EditSeekerProfile = async(req, res)=>{
 }
 
 const updatePass = async(req, res)=>{
-    if(req.headers.authorization){
 
-        let token = req.headers.authorization;
-        let obj = jwt.decode(token, process.env.ENC_KEY);
-        if(obj){
-            let id = obj.id;
-            let result = await Seeker.find({_id : id });
-            if(result[0].password == sha1(req.body.password)){
-                await Seeker.updateMany({_id : id}, {password : sha1(req.body.newpass)});
-                res.send({success:true, errType : 1})
-            }else{
-                res.send({success:false, errType : 1})
-            }
-        }else{
-
-        }
-
-
-    }else{
-        res.send({success:false});
-    }
 }
 
-let getOtp = async(req,res)=>{
-    let username = req.body.username;
-    let result = await Seeker.find({username:username});
-    if(result.length == 1){
-
-    }else{
-        res.send({success:false});
-    }
-}
-
-export {SeekerProfile,getOtp, EditSeekerProfile, updatePass};
+export {SeekerProfile, EditSeekerProfile, updatePass};

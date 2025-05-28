@@ -1,54 +1,8 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react';
-import {useFormik} from 'formik'
-import LoginSchema from '../../schema/LoginSchema';
-import {NavLink, useNavigate} from 'react-router-dom'
-import axios from 'axios'
-import Slider from '../../components/Slider';
-import  Button  from 'react-bootstrap/Button'
+import React from "react"
 
-const Login = () => {
-  let navigate = useNavigate();
-
-  let [errMsg,setErrMsg] = useState("");
-  useEffect(()=>{
-    window.scroll(0,0);
-  },[])
-
- let loginFrm = useFormik({
-  validationSchema : LoginSchema,
-  initialValues : {
-    email : "",
-    password : ""
-  },
-  onSubmit : (fromData)=>{
-    axios.post(`${import.meta.env.VITE_API_URL}/seekerauth`, fromData)
-    .then(response=>{
-      // console.log(response.data)
-      if(response.data.success==true){
-        if(localStorage.getItem("owner-access-token")){
-          localStorage.removeItem("owner-access-token")
-          localStorage.removeItem("owner-name")
-        }
-        localStorage.setItem("name", response.data.name);
-        localStorage.setItem("access-token", response.data.token);
-        navigate("/");
-      }
-      else{
-        if(response.data.errType==1){
-          setErrMsg("This Email ID and Password is Incorrect !");
-
-        }
-        if(response.data.errType==2){
-          setErrMsg("This Password is Incorrect !")
-
-        }
-      }
-    })
-  }
- })
-    return ( 
-      <>
+const ForgotPassword = () => {
+    return (
+        <>
         <Slider/>
         <div className="container" style={{minHeigh : "700px"}}>
         <form onSubmit={loginFrm.handleSubmit}>
@@ -112,8 +66,7 @@ const Login = () => {
          </form>
         </div>
       </>
-       
     )
 }
 
-export default Login
+export default ForgotPassword

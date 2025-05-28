@@ -84,9 +84,9 @@ const Login = () => {
                   />
                 </div>
 
-                <div className="col-md-12 ">
+                <div className="col-md-12 my-3">
                   <p className='text-center'>
-                    <NavLink to='/seeker/forgot-password' >Forgot Password</NavLink>
+                    <NavLink>Forgot Password</NavLink>
                   </p>
                 </div>
 

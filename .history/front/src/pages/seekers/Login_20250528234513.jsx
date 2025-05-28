@@ -86,7 +86,7 @@ const Login = () => {
 
                 <div className="col-md-12 ">
                   <p className='text-center'>
-                    <NavLink to='/seeker/forgot-password' >Forgot Password</NavLink>
+                    <NavLink>Forgot Password</NavLink>
                   </p>
                 </div>
 

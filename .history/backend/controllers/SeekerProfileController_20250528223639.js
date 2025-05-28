@@ -44,8 +44,7 @@ const updatePass = async(req, res)=>{
             let id = obj.id;
             let result = await Seeker.find({_id : id });
             if(result[0].password == sha1(req.body.password)){
-                await Seeker.updateMany({_id : id}, {password : sha1(req.body.newpass)});
-                res.send({success:true, errType : 1})
+
             }else{
                 res.send({success:false, errType : 1})
             }
@@ -59,14 +58,4 @@ const updatePass = async(req, res)=>{
     }
 }
 
-let getOtp = async(req,res)=>{
-    let username = req.body.username;
-    let result = await Seeker.find({username:username});
-    if(result.length == 1){
-
-    }else{
-        res.send({success:false});
-    }
-}
-
-export {SeekerProfile,getOtp, EditSeekerProfile, updatePass};
+export {SeekerProfile, EditSeekerProfile, updatePass};

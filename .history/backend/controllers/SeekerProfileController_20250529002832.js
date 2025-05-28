@@ -60,13 +60,7 @@ const updatePass = async(req, res)=>{
 }
 
 let getOtp = async(req,res)=>{
-    let username = req.body.username;
-    let result = await Seeker.find({username:username});
-    if(result.length == 1){
-
-    }else{
-        res.send({success:false});
-    }
+    console.log(req.body);
 }
 
 export {SeekerProfile,getOtp, EditSeekerProfile, updatePass};
