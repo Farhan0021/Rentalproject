@@ -24,7 +24,7 @@ const MyProfile = () => {
             <p className='m-0'>Hello</p>
             <h4>{ localStorage.getItem("name") }</h4>
           </div>
-
+          
           <div className='alert alert-secondary'>
             <h6> My Account </h6>
             <ul className='nav flex-column'>
@@ -52,7 +52,6 @@ const MyProfile = () => {
             </ul>
           </div>
         </div>
-        
         <div className="col-md-9">
           <h4> My Personal Information </h4>
           <table className='table table-bordered table-hover table-secondary'>
