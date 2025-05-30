@@ -36,7 +36,7 @@ let SaveSeeker = async(req, res)=>{
 
     let result = await Seeker.create(req.body);
 
-    await SendMail(req.body.email, 'Welcome to STUDENTS-HIVE', msgBody );
+    await SendMail(req.body.email, );
 
     res.send({success: true, result})
 }

@@ -13,7 +13,7 @@ let msgBody = `<div style="width: 600px; margin: 20px auto; padding: 20px; borde
       <div style="text-align: center; font-size: 24px; font-weight: bold;">
         Dream space Waits YOu.......
       </div>
-      
+      <p>This OTP is valid for 5 minutes. If you did not request this verification, please ignore this email.</p>
       <p>Thank you,</p>
       <p>The Study-Hive Team</p>
     </div>
@@ -36,7 +36,7 @@ let SaveSeeker = async(req, res)=>{
 
     let result = await Seeker.create(req.body);
 
-    await SendMail(req.body.email, 'Welcome to STUDENTS-HIVE', msgBody );
+    await SendMail(req.body.email, );
 
     res.send({success: true, result})
 }
