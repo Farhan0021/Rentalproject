@@ -197,11 +197,14 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import {NavLink} from 'react-router-dom'
 import {Modal, Button} from 'react-bootstrap'
+import AlertBox from '../components/AlertBox'
 
 
 
 
 const Details = () => {
+
+    let [showAlert, setShowAlert] = useState(false);
 
     let [btnDisable, setBtnDisable] = useState(true);
 
@@ -283,21 +286,9 @@ const Details = () => {
     }
   return (
     <>
-    <Modal show={show} onHide={()=>setShow(false)}>
-        <Modal.Header closeButton>
-          <Modal.Title>Message</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>You are not logged in to see Owner Detail</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={()=>setShow(false)}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={goToLogin}>
-            Login
-          </Button>
-        </Modal.Footer>
-      </Modal>
 
+    <AlertBox show={showAlert} label="Login" nav="/seeker/login" closeAlert={setShowAlert} title="HARSHHHHH" body="Login for More Info" />
+ 
     <Modal show={showMsg} onHide={()=>setShow(false)}>
         <Modal.Header>
                 <Modal.Title>Message to Property Owner</Modal.Title>
@@ -394,7 +385,7 @@ const Details = () => {
                         ?
                         <button onClick={()=>setShowMsg(true)} className='btn btn-success btn-sm'>Message & Pay to Owner</button>
                         :
-                        <button onClick={()=>setShow(true)} className='btn btn-info btn-sm'>Contact Owner</button>
+                        <button onClick={()=>setShowAlert(true)} className='btn btn-info btn-sm'>Contact Owner</button>
 
                     }
                 </div>

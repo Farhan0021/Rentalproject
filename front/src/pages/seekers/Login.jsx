@@ -6,10 +6,11 @@ import {NavLink, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import Slider from '../../components/Slider';
 import  Button  from 'react-bootstrap/Button'
+import AlertBox from '../../components/AlertBox';
 
 const Login = () => {
+  let [x, setx] = useState(false);
   let navigate = useNavigate();
-
   let [errMsg,setErrMsg] = useState("");
   useEffect(()=>{
     window.scroll(0,0);
@@ -49,6 +50,7 @@ const Login = () => {
  })
     return ( 
       <>
+        <AlertBox show={x} label="Forgot Password" title="Message" body="Are You Sure Go To Forgot Your Password" closeAlert={setx} nav="/seeker/forgot-password" />
         <Slider/>
         <div className="container" style={{minHeigh : "700px"}}>
         <form onSubmit={loginFrm.handleSubmit}>
@@ -86,7 +88,8 @@ const Login = () => {
 
                 <div className="col-md-12 ">
                   <p className='text-center'>
-                    <NavLink to='/seeker/forgot-password' >Forgot Password</NavLink>
+                    {/* <NavLink to='/seeker/forgot-password' >Forgot Password</NavLink> */}
+                    <button onClick={()=>setx(true)} type='button' className='btn btn-link'>Forgot Password</button>
                   </p>
                 </div>
 
